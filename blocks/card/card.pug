@@ -1,0 +1,18 @@
+mixin card(data)
+  article.card
+    h2.card__title= data.title
+    div.card__picture-wrapper
+      img.card__picture(
+        src="./images/van.png",
+        class=`${data.filter ? 'card__picture_filter_' + data.filter : ''}`
+        alt="Микроавтобус дом на колёсах"
+      )
+      span.card__watermark= data.watermark
+    .card__text
+      each text in data.texts
+        p= text
+    .card__footer
+      include ../like/like
+      +like(class="card__icon-button")
+      include ../button/button
+      +button('Like')(class="card__like-button")

@@ -1,0 +1,26 @@
+.footer {
+  margin: 50px 0 100px;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 15px 20px;
+
+    @media (width <= 375px) {
+      flex-direction: column;
+    }
+  }
+
+  &__button-icon {
+    width: 21px;
+    height: 21px;
+
+    @media (width <= 375px) {
+      width: 28px;
+      height: 28px;
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
+}

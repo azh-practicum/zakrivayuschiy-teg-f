@@ -12,3 +12,20 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+@keyframes heartScale {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks {
+  to {
+    fill: var(--heart-fill-color);
+  }
+}
+
+@keyframes currentThemeArrow {
+  to {
+    left: -20px;
+  }
+}

@@ -1,0 +1,6 @@
+mixin button(text)
+  button.button&attributes(attributes)(type="button")
+    if block
+      block
+    if text
+      span.button__text= text

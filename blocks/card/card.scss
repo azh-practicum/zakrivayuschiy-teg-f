@@ -1,0 +1,102 @@
+.card {
+  border: var(--typical-border);
+  font: 18px/21px var(--main-font-family);
+  background: var(--background-color);
+
+  &__title {
+    margin: 0;
+    border-bottom: var(--typical-border);
+    padding: 5px 10px;
+    font: inherit;
+    font-variation-settings: 'wght' var(--main-font-title-weight);
+  }
+
+  &__watermark {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    opacity: .5;
+    color: var(--main-color);
+    font: 400 14px/1 var(--accent-font-family);
+    text-shadow: 1px 0px var(--background-color), -1px 0 var(--background-color), 0 1px var(--background-color), 0 -1px var(--background-color);
+    mix-blend-mode: hard-light;
+
+    @supports ((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+      text-shadow: none;
+      -webkit-text-stroke: 1px var(--background-color);
+      text-stroke: 1px var(--background-color);
+    }
+
+    @media (width <= 375px) {
+      right: 11px;
+    }
+  }
+
+  &__picture-wrapper {
+    position: relative;
+    border-bottom: var(--typical-border);
+    overflow: hidden;
+    background: var(--card-image-placeholder);
+  }
+
+  &__picture {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    image-rendering: pixelated;
+
+    &_filter {
+      &_sepia {
+        filter: sepia(.6);
+      }
+
+      &_grayscale {
+        filter: grayscale(.8);
+      }
+
+      &_invert {
+        filter: invert(.8);
+      }
+
+      &_hue-rotate {
+        filter: hue-rotate(180deg);
+      }
+
+      &_blur {
+        filter: blur(15px);
+      }
+
+      &_saturate {
+        filter: saturate(2);
+      }
+
+      &_combo {
+        filter: hue-rotate(180deg) blur(2px) saturate(.5);
+      }
+    }
+  }
+
+  &__text {
+    margin: 25px;
+    font-variation-settings: 'wght' var(--main-font-text-weight);
+  }
+
+  &__text p + p {
+    margin-top: 27px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: end;
+    gap: 2px;
+    margin: 25px;
+  }
+
+  &__like-button {
+    width: 128px;
+  }
+
+  & + & {
+    margin-top: 50px;
+  }
+}

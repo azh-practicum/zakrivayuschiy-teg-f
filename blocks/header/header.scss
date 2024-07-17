@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  border: var(--typical-border);
+  padding: 136px 0 25px;
+  overflow: hidden;
+  text-transform: uppercase;
+  background: var(--background-color);
+
+  @media (width <= 375px) {
+    padding-top: 120px;
+  }
+
+  &__logo {
+    font: 400 clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem)/1 var(--accent-font-family);
+  }
+
+  &__title {
+    margin: 20px 0 25px;
+    font: 400 clamp(.875rem, .226rem + 2.7692vw, 1.4375rem)/1 var(--accent-font-family);
+  }
+
+  &__theme-menu {
+    margin-left: 20px;
+  }
+}

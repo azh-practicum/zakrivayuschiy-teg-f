@@ -1,0 +1,77 @@
+.like {
+  padding: 0;
+  border: 2px solid transparent;
+  background: var(--background-color);
+  cursor: pointer;
+
+  &__icon {
+    display: block;
+    transition: border-color .3s ease;
+
+    .core {
+      transition: fill .3s .03s;
+    }
+
+    .main-body {
+      transition: fill .3s;
+    }
+
+    &:hover {
+      .core {
+        fill: var(--heart-contour-color);
+        transition-delay: 0;
+      }
+
+      .main-body {
+        fill: var(--heart-contour-color);
+        transition-delay: .05sj;
+      }
+    }
+
+    &:active {
+      .core {
+        fill: var(--heart-fill-color);
+        transition-delay: 0;
+      }
+
+      .main-body {
+        fill: var(--heart-fill-color);
+        transition-delay: .05s;
+      }
+    }
+
+    &.is-liked {
+      .core {
+        fill: var(--heart-fill-color);
+        transition-delay: 0;
+      }
+
+      .main-body {
+        fill: var(--heart-fill-color);
+        transition-delay: .05s;
+      }
+
+      .contour {
+        fill: var(--heart-fill-color);
+        transition: fill .3s .05s;
+      }
+
+      .heart {
+        transform-origin: center;
+        animation: heartScale .3s .1s alternate ease-in;
+      }
+
+      .sparks {
+        animation: sparks .3s .3s alternate ease-in;
+      }
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    border-color: var(--main-color);
+  }
+}

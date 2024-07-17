@@ -1,0 +1,11 @@
+.page {
+  margin: auto;
+  color: var(--main-color);
+  font: 18px/21px var(--main-font-family);
+  font-variation-settings: 'wght' var(--main-font-text-weight);
+  background-color: var(--background-color);
+  background-image: var(--page-background);
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  max-inline-size: 700px;
+}

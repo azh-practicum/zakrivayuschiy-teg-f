@@ -1,0 +1,13 @@
+-
+  var themes = [
+    { id: 'dark', title: 'Темно' },
+    { id: 'auto', title: 'Авто', disabled: true },
+    { id: 'light', title: 'Светло' },
+  ]
+
+mixin theme-menu
+  nav.theme-menu&attributes(attributes)
+    ul.theme-menu__list
+      each theme in themes
+        li.theme-menu__item
+          button(type="button", data-theme=theme.id, class="theme-menu__button", disabled=theme.disabled)= theme.title

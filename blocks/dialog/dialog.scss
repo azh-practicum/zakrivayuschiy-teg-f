@@ -1,0 +1,28 @@
+.dialog {
+  max-width: 350px;
+  border: var(--typical-border);
+  padding: 30px;
+  color: var(--main-color);
+  font: 400 14px/21px var(--accent-font-family);
+  text-transform: uppercase;
+  background: var(--background-color);
+
+  &::backdrop {
+    background: rgba(0, 0, 0, .75);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 30px;
+  }
+}

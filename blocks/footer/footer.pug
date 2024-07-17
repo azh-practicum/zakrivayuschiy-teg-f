@@ -1,0 +1,7 @@
+footer.footer
+  include ../button/button
+  +button('Сохранить на память')(class="footer__button", aria-controls="insert-floppy", onclick="window['insert-floppy'].showModal()")
+    include ../floppy/floppy
+    +floppy(class="footer__button-icon button__icon", viewBox="0 0 40 40")
+  include ../dialog/dialog
+  +dialog("insert-floppy")

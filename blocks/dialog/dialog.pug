@@ -1,0 +1,12 @@
+mixin dialog(id)
+  dialog&attributes(attributes).dialog(id=id)
+    div.dialog__content
+      if id == "insert-floppy"
+        include ../floppy/floppy
+        +floppy(class="dialog__icon", width="40", height="40")
+        p Вставьте дискету, чтобы продолжить
+      else
+        | Что-то пошло не так
+    form(method="dialog")
+      include ../button/button
+      +button('OK')(class="dialog__button", type="submit")

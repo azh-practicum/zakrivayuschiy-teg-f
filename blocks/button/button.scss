@@ -1,0 +1,43 @@
+.button {
+  position: relative;
+  border: var(--typical-border);
+  padding: 10px 20px;
+  font: 14px/1 var(--accent-font-family);
+  background: var(--background-color);
+  transition: box-shadow .3s ease;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--main-color);
+    transition: right .5s ease-in-out;
+  }
+
+  &:hover::before {
+    right: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 2px 2px 0px var(--main-color);
+  }
+
+  &__text,
+  &__icon {
+    vertical-align: middle;
+    color: var(--button-text-color);
+    mix-blend-mode: difference;
+  }
+
+  &__icon {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,32 @@
+-
+  var cssFiles = [
+    "./fonts/fonts.css",
+    "./styles/variables.css",
+    "./styles/globals.css",
+    "./styles/style.css",
+    "./styles/animations.css",
+    "./styles/themes.css",
+  ]
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="color-scheme", content="light dark")
+    title= title
+    link(rel="icon", href="./images/favicon.ico" sizes="any")
+    link(rel="icon", href="./images/svg.svg" type="image/svg+xml")
+    link(rel="apple-touch-icon", href="./images/favicon.png")
+    each cssFile in cssFiles
+      link(rel="stylesheet" href=cssFile)
+    script(src="./scripts/set-theme.js")
+  include ../blocks/page/page
+  +page
+    include ../blocks/header/header
+    main
+      block content
+    include ../blocks/footer/footer
+    script(src="./scripts/like.js")
